@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(value = "service-post")
 public interface FeignServicePost {
-    @GetMapping("post")
+    @GetMapping("/post/{id}")
     DataRet getPostFromServicePost(@PathVariable("id") String id);
 }

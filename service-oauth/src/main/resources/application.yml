@@ -1,0 +1,31 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: service-oauth
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+
+jdbc:
+  url: jdbc:mysql://192.168.70.51:3306/isp_scms?useUnicode=true&characterEncoding=UTF8
+  username: root
+  password: root@123
+
+redis:
+  host: 192.168.70.51
+  port: 6379
+  database: 6
+  password:
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+
+
+
+
