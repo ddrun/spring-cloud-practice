@@ -18,6 +18,9 @@ jdbc:
   username: root
   password: root@123
 
+gateway:
+  config:
+    test: djran-one
 eureka:
   client:
     service-url:
