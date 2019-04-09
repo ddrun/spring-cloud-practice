@@ -20,7 +20,7 @@ jdbc:
 
 gateway:
   config:
-    test: djran-one
+    test: djran-one-two
 eureka:
   client:
     service-url:
