@@ -3,6 +3,7 @@ package com.example.djran.gateway.config;
 import com.alibaba.fastjson.JSON;
 import com.example.djran.gateway.dao.RouteDefineDao;
 import com.example.djran.gateway.model.RouteDefine;
+import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinition;
@@ -23,7 +24,6 @@ public class RouteConfig  implements RouteDefinitionRepository {
     private RouteDefineDao routeDefineDao;
     @Override
     public Flux<RouteDefinition> getRouteDefinitions() {
-
         List<RouteDefinition> routeDefinitions = new ArrayList<>();
         List<RouteDefine> routeDefines=routeDefineDao.findAll();
         if(routeDefines!=null&&routeDefines.size()>0){
