@@ -1,11 +1,9 @@
 package com.example.djran.eureka.client.controller;
 
-import com.alibaba.fastjson.JSONArray;
+import com.example.djran.eureka.client.dto.ApiRegRet;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.MethodParameter;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpRequest;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.mvc.condition.PatternsRequestCondition;
@@ -13,15 +11,32 @@ import org.springframework.web.servlet.mvc.condition.RequestMethodsRequestCondit
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import javax.servlet.http.HttpServletRequest;
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
-public class MappingController {
+public class MappingCDDontroller {
     @Autowired
     WebApplicationContext applicationContext;
+    @PostMapping("api/register")
+    public String apiRegister(@RequestBody ApiRegRet apiRegRet, HttpServletRequest request) {
+        String serverName=request.getServerName();
+        int serverPort=request.getServerPort();
+        String addr=request.getRemoteAddr();
+        String host=request.getRemoteHost();
+        String localAddr=request.getLocalAddr();
+        String contextPath=request.getContextPath();
+        String servletPath=request.getServletPath();
+        String protocol=request.getProtocol();
+        String uri= request.getRequestURI();
+        System.out.println(apiRegRet.getServiceTypeCodeParent()
+                +" "+apiRegRet.getApiUrl()+" "+apiRegRet.getServiceTypeCode());
+        return null;
+    }
 
     @RequestMapping(value = "v1/getAllUrl", method = RequestMethod.POST)
     public Object getAllUrl() {
