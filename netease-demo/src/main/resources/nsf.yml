@@ -1,34 +1,34 @@
 nsf:
 # # 基本信息
   application:
-   name: ep-isp-oauth
-   version: 1.0.0
-   desc: this is isp-demo service description
+    name: ep-isp-oauth
+    version: 1.0.0
+    desc: this is isp-demo service description
   # # agent配置
   server:
-   enable: true # 是否启用NSF Server控制中心, 默认关闭
-   address: grpc://nsf-server.v190129.163skiff.com:8981
+    enable: true # 是否启用NSF Server控制中心, 默认关闭
+    address: grpc://nsf-server.v190129.163skiff.com:8981
 
   # # 注册中心
   registry:
-   enable: true # 是否启用eureka注册发现服务, 默认关闭
-   address: http://nsf-registry.v190129.163skiff.com/eureka/
+    enable: true # 是否启用eureka注册发现服务, 默认关闭
+    address: http://nsf-registry.v190129.163skiff.com/eureka/
 #   # 应用监控
   metrics:
-   enable: true # 是否启用hystrix的metrics应用监控
-  ## # 方法配置
-  #manager:
-  # patterns:
-  #   - className: com.netease.cloud.nsf.demo.stock.viewer.web.service.impl.*
+    enable: true # 是否启用hystrix的metrics应用监控
+  # # 方法配置
+  manager:
+   patterns:
+     - className: com.example.djran.netease.controller.*
   # # 服务鉴权配置
   authority:
   #  #认证中心地址
-   server: http://platform-service-auth.v190129.163skiff.com
+    server: http://platform-service-auth.v190129.163skiff.com
   #  #访问重试次数(仅403状态会重试，默认为 3 )
-   retry: 3
-  #  #aksk请按需替换
-   accessKey: 7ba8b763606e4d85a450578529770e05
-   secretKey: 4cc3bff0d81f4da9b560943ecb290046
+    retry: 3
+  # #aksk请按需替换
+    accessKey: 5922fc21d61c496caecd6adad306caf2
+    secretKey: 93071f82220c4724a266d4f05639b56e
 #config:
 # enable: false
 # appId: isp-oauth
