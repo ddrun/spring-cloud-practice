@@ -1,0 +1,28 @@
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.70.140:9001/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    prefer-ip-address: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+jdbc:
+  url: jdbc:mysql://115.233.221.132:13306/isp_scms?useUnicode=true&characterEncoding=UTF8
+  username: root
+  password: root@123
+server:
+  port: 20081
+
+
+
+
