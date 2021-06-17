@@ -1,5 +1,7 @@
 
-
+spring:
+  application:
+    name: netease-demo
 
 eureka:
   client:
@@ -20,6 +22,7 @@ jdbc:
   url: jdbc:mysql://115.233.221.132:13306/isp_scms?useUnicode=true&characterEncoding=UTF8
   username: root
   password: root@123
+
 server:
   port: 20081
 

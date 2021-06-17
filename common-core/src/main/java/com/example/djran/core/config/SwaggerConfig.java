@@ -17,8 +17,8 @@ public class SwaggerConfig {
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
             .apiInfo(new ApiInfoBuilder()
-            .title("服务接口文档")
-            .termsOfServiceUrl("http://api.epsoft.com")
+            .title("在线API文档")
+            .termsOfServiceUrl("http://api.djran.com")
             .version("2.0")
             .contact(new Contact("djran",
                     "https://ddrun.github.io/",
@@ -28,35 +28,6 @@ public class SwaggerConfig {
             .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
             .build();
     }
-
-//    @Bean
-//    public Docket createSwaggerDocketByGroup1(){
-//        Docket docket=new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("大汗接口")
-//                .select()
-//                .paths(regex("/bpo/.*")).build()
-//                .apiInfo(apiInfo);
-//        return docket;
-//    }
-//
-//    @Bean
-//    public Docket createSwaggerDocketByGroup2(){
-//        Docket docket=new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("天正接口")
-//                .select()
-//                .paths(regex("/post/.*")).build()
-//                .apiInfo(apiInfo);
-//        return docket;
-//    }
-//    @Bean
-//    public Docket createSwaggerDocketByGroup3(){
-//        Docket docket=new Docket(DocumentationType.SWAGGER_2)
-//                .groupName("内容接口")
-//                .select()
-//                .paths(regex("/site/.*|/face/.*")).build()
-//                .apiInfo(apiInfo);
-//        return docket;
-//    }
 }
 
 
